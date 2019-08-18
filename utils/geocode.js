@@ -4,7 +4,7 @@ module.exports = {
     geocode(address, callback) {
         const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) + '.json?access_token=pk.eyJ1IjoiYWxhbGFsZXhleGV4IiwiYSI6ImNqemJyZGhoczAxd3ozbXBtdWxta2VicG0ifQ.kT2duIVB4ab7GtxEHPQl1w&limit=1'; 
     
-        request({uri: url, json: true}, (err, response, body) => {
+        request({url, json: true}, (err, response, body) => {
             if(err){
                 callback(err);  
             }
